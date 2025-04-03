@@ -1,0 +1,37 @@
+---
+import Experienceitem from "../components/Experienceitem.astro"
+const EXPERIENCE = [
+  {
+    date: "2024 - Actualmente",
+    title: "Data Analyst",
+    company: "Accenture",
+    description:
+      "Trilingual Data Analyst and SME (Spanish, Portuguese, English) with experience in business intelligence and data analysis. Specialized in creating interactive dashboards, ETL processes, and optimizing workflows using Power BI and advanced Excel. Proven ability to translate complex data into actionable insights, driving significant improvements in decision-making and operational efficiency.",
+    link: "https://www.linkedin.com/in/keiner-cordero-varela-983a49244/",
+  },
+  {
+    date: "2023 - 2024",
+    title: "SME",
+    company: "Accenture",
+    description:
+      "Provide expert advice and guidance to project teams on best practices and strategies, Collaborate across departments to ensure technical and business objectives align with company standards. Address and resolve complex issues with innovative solutions. Develop and deliver training sessions and educational resources to enhance team capabilities.",
+  },
+  {
+    date: "2022 - 2023 ",
+    title: "Customer Service Representative",
+    company: "Amazon",
+    description:
+      " Provided solutions for inbound phone and chat contacts. Investigated challenging situations delay to provide a more comprehensive and thorough service to customers. Achieved goals for individual and team performance, such as satisfying the customer,increasing efficiency and maintaining high quality levels.Experience in the retail department.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <Experienceitem {...experience} />
+      </li>
+    ))
+  }
+</ol>
