@@ -1,0 +1,37 @@
+---
+import Experienceitem from "../components/Experienceitem.astro"
+const EXPERIENCE = [
+  {
+    date: "2024 - Actualmente",
+    title: "Data Analyst",
+    company: "Accenture",
+    description:
+      "I led a project to optimize operational codes used by over 800 analysts at Accenture Costa Rica, ensuring daily usage and improving overall performance after months of fluctuating results. I developed and implemented a Power BI visualization system that automated metric analysis, reducing individual analysis time by 30 minutes per analyst and saving a total of 400 hours per week. Currently, I work closely with the Workforce Management (WFM) team, providing data-driven insights to enhance planning and operational efficiency. Additionally, I designed Power BI dashboards that improved analysis time by 40% and developed ETL processes using Power Query and Excel, increasing data integration efficiency by 30%. I also implemented an automated reporting system, reducing report generation time by 50% and saving 2.5 hours per week across the entire Costa Rica operation. Finally, I developed a Power BI-based audit solution to enhance data validation accuracy.",
+    link: "https://www.linkedin.com/in/keiner-cordero-varela-983a49244/",
+  },
+  {
+    date: "2023 - 2024",
+    title: "SME",
+    company: "Accenture",
+    description:
+      "Provide expert advice and guidance to project teams on best practices and strategies, Collaborate across departments to ensure technical and business objectives align with company standards. Address and resolve complex issues with innovative solutions. Develop and deliver training sessions and educational resources to enhance team capabilities.",
+  },
+  {
+    date: "2022 - 2023 ",
+    title: "Customer Service Representative",
+    company: "Amazon",
+    description:
+      " Provided solutions for inbound phone and chat contacts. Investigated challenging situations delay to provide a more comprehensive and thorough service to customers. Achieved goals for individual and team performance, such as satisfying the customer,increasing efficiency and maintaining high quality levels.Experience in the retail department.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <Experienceitem {...experience} />
+      </li>
+    ))
+  }
+</ol>

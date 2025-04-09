@@ -1,0 +1,71 @@
+---
+const PROJECTS = [
+  {
+    title: "Data Science Salaries 2022-2025", 
+    description: "This Power BI project explores salaries across various fields of Data Science, providing key insights into salary trends based on experience, location, and specialization. I used SQL to extract and transform the data, optimizing the accuracy of the analysis and visualization in Power BI",
+    link: "https://app.powerbi.com/reportEmbed?reportId=acd76cee-beb4-44b1-ab4f-14f55e013aa3&autoAuth=true&ctid=ea7be3f9-2e56-477c-a9cd-6cdc77929b89",
+    image: "BIX_Data_Science_salary_Project.png",
+    tags: ["SQL", "PowerBI"]
+  }
+];
+
+const TAG_ICONS = {
+  PowerBI: "power-bi.svg",
+  Python: "python.svg",
+  SQL: "sql.svg"
+};
+---
+<style>
+  @keyframes moveBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .animated-border {
+    position: relative;
+    border-radius: 10px;
+    padding: 6px; /* Para dar espacio al borde */
+  }
+
+  .animated-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    padding: 3px;
+    background: linear-gradient(90deg, #00adfd, #0011ff, #f000e4, #0907ad, #0066ff, #5c068d, #7c058b);
+    background-size: 300% 100%;
+    animation: moveBorder 10s linear infinite;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+</style>
+
+<div class="flex flex-wrap gap-6 justify-center">
+  {PROJECTS.map(({ image, title, description, link, tags }) => (
+    <article key={title} class="w-full sm:w-1/2 md:w-2/3 lg:w-2/3 xl:w-2/3">
+      <a href={link} target="_blank" rel="noopener noreferrer" class="flex flex-col p-6 animated-border shadow-2xl hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
+        <img 
+          class="w-full h-64 object-cover rounded-lg shadow-xl mb-4"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${title}`} 
+        />
+        <div class="flex flex-col justify-between">
+          <h3 class="text-2xl font-semibold text-green-400 mb-3">{title}</h3>
+          <p class="text-lg mb-4">{description}</p>
+          <ul class="flex gap-3">
+            {tags.map(tag => (
+              <li key={tag} class="bg-gray-800 text-white  dark:text-white px-3 py-1 rounded-full text-md flex items-center gap-2">
+                <img src={TAG_ICONS[tag]} alt={tag} class="w-5 h-5 mr-2" />
+                {tag}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </a>
+    </article>
+  ))}
+</div>
