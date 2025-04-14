@@ -9,6 +9,7 @@ import Hero from '../components/Hero.astro';
 import TitleSection from '../components/TitleSection.astro';
 import AboutMe from '../components/AboutMe.astro';
 import ProfileCheck from '../components/Icons/ProfileCheck.astro';
+import Badges from '../components/Badges.astro';
 ---
 
 <Layout 
@@ -27,6 +28,15 @@ import ProfileCheck from '../components/Icons/ProfileCheck.astro';
         Work Experience
       </TitleSection>
       <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="badges">
+      
+      <TitleSection>
+        <Code class="size-7" />
+        Certifications
+      </TitleSection>
+      <Badges />
     </SectionContainer>
 
     <SectionContainer id="proyectos">
